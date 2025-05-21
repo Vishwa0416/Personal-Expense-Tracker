@@ -1,0 +1,5 @@
+Food
+Transport
+Entertainment
+Bills
+Healthcare
