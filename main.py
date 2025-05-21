@@ -32,7 +32,8 @@ def menu():
         print("\n--- Expense Tracker ---")
         print("1. Add Expense")
         print("2. View Expenses")
-        print("3. Exit")
+        print("3. View Expense Chart")
+        print("4. Exit")
         choice = input("Enter your choice: ")
 
         if choice == '1':
@@ -40,6 +41,9 @@ def menu():
         elif choice == '2':
             view_expenses()
         elif choice == '3':
+            from utils.visualizer import plot_expenses
+            plot_expenses()
+        elif choice == '4':
             break
         else:
             print("❌ Invalid choice.")
