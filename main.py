@@ -1,3 +1,4 @@
+import os
 import csv
 from models.expense import Expense
 
@@ -8,12 +9,19 @@ def add_expense():
     description = input("Enter description: ")
 
     exp = Expense(amount, category, date, description)
-    
-    with open('data/expenses.csv', mode='a', newline='') as file:
+
+    file_path = 'data/expenses.csv'
+    file_exists = os.path.exists(file_path)
+    write_header = not file_exists or os.stat(file_path).st_size == 0
+
+    with open(file_path, mode='a', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=['amount', 'category', 'date', 'description'])
+        if write_header:
+            writer.writeheader()
         writer.writerow(exp.to_dict())
 
     print("✅ Expense added!")
+
 
 if __name__ == '__main__':
     add_expense()
