@@ -25,10 +25,3 @@ A simple and elegant desktop application built with Python, Tkinter, and Pandas 
 - **matplotlib** – Visualization
 
 ---
-
-## 🛠 Installation
-
-1. **Clone the repo:**
-   ```bash
-   git clone https://github.com/yourusername/Personal-Expense-Tracker.git
-   cd Personal-Expense-Tracker
